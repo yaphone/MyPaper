@@ -1,6 +1,7 @@
 #coding=utf-8
 import os
 import tkMessageBox
+import matplotlib.pyplot as plt
 from ttk import *
 from Tkinter import *
 from PIL import Image, ImageTk
@@ -17,12 +18,17 @@ class SDWN_GUI():
         
         #添加主要控件
         self.top_frame = Frame(self.root)
-        self.top_frame.grid()
+        self.top_frame.grid(row=0)
         
         self.menu_bar = Menu(self.root)
         self.root.config(menu=self.menu_bar)
         
-        #为top_frame添加三个主要
+        self.main_frame = Frame(self.root)
+        self.main_frame.grid(row=1)
+        
+        #--------------------------------------------------------------------------------------------
+        
+        #为top_frame添加三个主要控件
         self.controller_manager = Frame(self.top_frame)
         self.controller_manager.grid(row=0, column=0, padx=5)
         
@@ -86,7 +92,7 @@ class SDWN_GUI():
         
         self.real_time_load_img = Image.open(self.path + '/img/real_time_load.ico')
         self.real_time_load_photo = ImageTk.PhotoImage(self.real_time_load_img)
-        self.real_time_load_button = Button(self.load_balance_manger, text=u"负载均衡", image=self.real_time_load_photo, compound=TOP)        
+        self.real_time_load_button = Button(self.load_balance_manger, text=u"实时负载", image=self.real_time_load_photo, compound=TOP)        
         
         self.load_balance_label = Label(self.load_balance_manger, text=u"负载管理")
         
@@ -101,6 +107,24 @@ class SDWN_GUI():
         self.exit_system_button = Button(self.top_frame, text=u"退出系统", image=self.exit_system_photo, compound=TOP)
         
         self.exit_system_button.grid(row=0, column=3, rowspan=2)
+        
+        
+        #--------------------------------------------------------------------------------------------
+        #为main_frame添加两个控件
+        self.usual_use_frame = Frame(self.main_frame, height=800, width=200)
+        self.show_pic_frame = Frame(self.main_frame, height=800, width=600)
+        
+        
+        
+        
+        self.usual_use_frame.grid(row=0, column=0)
+        self.show_pic_frame.grid(row=0, column=1)
+        
+        #为self.usual_use_frame添加菜单
+        self.usual_use_label = Label(self.usual_use_frame, text=u"常用操作")
+        self.usual_use_label.grid(row=0, column=0)
+        
+        #引入matplotlib生成系统实时负载图
         
         #程序进入主循环
         
