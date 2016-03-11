@@ -111,18 +111,28 @@ class SDWN_GUI():
         
         #--------------------------------------------------------------------------------------------
         #为main_frame添加两个控件
-        self.usual_use_frame = Frame(self.main_frame, height=800, width=200)
+        self.usual_use_frame = Frame(self.main_frame, height=800, width=800)
         self.show_pic_frame = Frame(self.main_frame, height=800, width=600)
         
         
         
         
-        self.usual_use_frame.grid(row=0, column=0)
-        self.show_pic_frame.grid(row=0, column=1)
+        self.usual_use_frame.grid(row=0, column=0, sticky="N")
+        self.show_pic_frame.grid(row=0, column=1, sticky="N")
         
         #为self.usual_use_frame添加菜单
-        self.usual_use_label = Label(self.usual_use_frame, text=u"常用操作")
-        self.usual_use_label.grid(row=0, column=0)
+        self.usual_use_label = Label(self.usual_use_frame, text=u"    常用操作    ", pady=10)
+        self.add_flow_button = Button(self.usual_use_frame, text=u"   添加流表   ")
+        self.delete_flow_button = Button(self.usual_use_frame, text=u"   删除流表   ")
+        self.add_lan_load_button = Button(self.usual_use_frame, text=u"有线交换网络实时负载")
+        self.add_wlan_load_button = Button(self.usual_use_frame, text=u"无线交换网络实时负载")
+        
+ 
+        self.usual_use_label.grid(row=0,column=0, sticky="N")
+        self.add_flow_button.grid(row=1,column=0, sticky="N")
+        self.delete_flow_button.grid(row=2, column=0, sticky="N")
+        self.add_lan_load_button.grid(row=3, column=0, sticky="N")
+        self.add_wlan_load_button.grid(row=4, column=0, sticky="N")
         
         #引入matplotlib生成系统实时负载图
         
