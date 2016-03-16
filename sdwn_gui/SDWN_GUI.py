@@ -43,7 +43,7 @@ class SDWN_GUI():
         
         
         
-        #controller_manager增加按键
+        #为controller_manager增加按键
         self.user_button_img = Image.open(self.path + '/img/user.ico')
         self.user_button_photo=ImageTk.PhotoImage(self.user_button_img)
         self.user_button = Button(self.controller_manager, text=u"用户管理", image=self.user_button_photo, compound=TOP)
