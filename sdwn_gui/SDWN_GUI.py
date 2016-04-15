@@ -52,7 +52,7 @@ class SDWN_GUI():
         
         
         
-        #controller_manager增加按键
+        #为controller_manager增加按键
         self.user_button_img = Image.open(self.path + '/img/user.ico')
         self.user_button_photo=ImageTk.PhotoImage(self.user_button_img)
         self.user_button = Button(self.controller_manager, text=u"用户管理", image=self.user_button_photo, compound=TOP)
@@ -72,7 +72,7 @@ class SDWN_GUI():
         self.topo_button.grid(row=0, column=2,padx=1)
         self.controller_manager_label.grid(row=1, columnspan=3)
 
-        #为flow_table_manager添加按键
+        #flow_table_manager添加按键
         self.set_flow_img = Image.open(self.path + '/img/set_flow.ico')
         self.set_flow_photo = ImageTk.PhotoImage(self.set_flow_img)
         self.set_flow_button = Button(self.flow_table_manager, text=u"配置流表", image=self.set_flow_photo, compound=TOP)
@@ -88,7 +88,7 @@ class SDWN_GUI():
         self.view_flow_button.grid(row=0, column=1, padx=1)
         self.flow_table_manager_label.grid(row=1, columnspan=2)
         
-        #为load_balance_manager添加按键
+        #load_balance_manager添加按键
         self.load_balance_img = Image.open(self.path + '/img/load_balance.ico')
         self.load_balance_photo = ImageTk.PhotoImage(self.load_balance_img)
         self.load_balance_button = Button(self.load_balance_manger, text=u"负载均衡", image=self.load_balance_photo, compound=TOP)
